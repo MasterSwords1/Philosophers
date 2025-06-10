@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masterswords <masterswords@student.42.f    +#+  +:+       +#+        */
+/*   By: ariyad <ariyad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 20:13:15 by ariyad            #+#    #+#             */
-/*   Updated: 2025/06/08 01:09:00 by mastersword      ###   ########.fr       */
+/*   Created: 2025/06/10 15:19:05 by ariyad            #+#    #+#             */
+/*   Updated: 2025/06/10 15:27:40 by ariyad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,31 @@
 # define PHILO_H
 
 # include <pthread.h>
-# include <sys/time.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <sys/time.h>
 # include <unistd.h>
+
+typedef struct s_data
+{
+	pthread_mutex_t	fork[200];
+pthread_mutex_t		*write_mutex;
+int					ttd;
+int					tte;
+int					tts;
+struct s_pihlo		*philos;
+int					num_of_meals;
+}
+t_data;
 
 typedef struct s_pihlo
 {
 	pthread_t		thr;
-	pthread_mutex_t	fork;
-	int				ttd;
-	int				tte;
-	int				tts;
-	int				ttt;
-	int				num_of_meals;
-	struct s_philo	*next;
-	struct s_philo	*prev;
+	int				idx;
+	pthread_mutex_t	*r_fork;
+	pthread_mutex_t	*l_fork;
+	struct s_data	data;
 }					t_philo;
-
-typedef struct s_data
-{
-	int				ttd;
-	int				tte;
-	int				tts;
-	int				ttt;
-	int				num_of_meals;
-}					t_data;
 
 // Helpers
 int					ft_isspace(char c);
@@ -49,5 +48,6 @@ size_t				ft_strlen(const char *str);
 int					ft_strcmp(const char *s1, const char *s2);
 int					get_vals(t_data *tdata, char **av, int n);
 void				copy_n_data(t_data *tdata, int n);
+void				setup_philos(t_philo *philos, t_data data, int n);
 
 #endif

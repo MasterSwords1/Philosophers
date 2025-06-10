@@ -6,7 +6,7 @@
 /*   By: masterswords <masterswords@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 21:35:53 by ariyad            #+#    #+#             */
-/*   Updated: 2025/06/08 01:03:44 by mastersword      ###   ########.fr       */
+/*   Updated: 2025/06/10 16:23:06 by ariyad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,19 @@ int	check_arg_num(int ac)
 
 int	main(int ac, char **av)
 {
-	pthread_t	philo[200];
+	pthread_t	philos[200];
 	int			num_of_philos;
 	t_data		data;
+	int			i;
 
 	if (!check_arg_num(ac))
 		return (0);
 	if (!get_vals(&data, av, num_of_philos))
 		return (0);
+	setup_philos(pihlos, data, num_of_philos);
+	i = 0;
+	while (i < num_of_philos)
+	{
+		pthread_create(&philos[i], NULL, (void));
+	}
 }
