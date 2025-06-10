@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ariyad <ariyad@student.42.fr>              +#+  +:+       +#+        */
+/*   By: masterswords <masterswords@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 20:13:54 by ariyad            #+#    #+#             */
-/*   Updated: 2025/05/29 18:53:18 by ariyad           ###   ########.fr       */
+/*   Updated: 2025/06/08 00:06:21 by mastersword      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	check_num(char *str)
 		return (1);
 	while (str[i])
 	{
-		if (str[i] >= '0' && str[i] <= '9')
+		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (0);
 		i++;
 	}

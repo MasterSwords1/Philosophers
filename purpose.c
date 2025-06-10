@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   purpose.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: masterswords <masterswords@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 21:35:53 by ariyad            #+#    #+#             */
-/*   Updated: 2025/06/08 01:03:44 by mastersword      ###   ########.fr       */
+/*   Created: 2025/06/07 13:31:29 by mastersword       #+#    #+#             */
+/*   Updated: 2025/06/07 23:57:11 by mastersword      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	check_arg_num(int ac)
-{
-	if (ac < 5 || ac > 6)
-	{
-		write(2, "invalid number of arguments\n", 29);
-		return (0);
-	}
-	return (1);
-}
+// int	eaten(void);
+// int	thinken(void);
+// int	sleepen(void);
 
-int	main(int ac, char **av)
-{
-	pthread_t	philo[200];
-	int			num_of_philos;
-	t_data		data;
+// void	sleepen(t_data tdata)
+// {
+// 	printf("%d philo is sleepen\n", gettimeofday(NULL, NULL));
+// 	usleep(tdata.tts);
+// }
 
-	if (!check_arg_num(ac))
-		return (0);
-	if (!get_vals(&data, av, num_of_philos))
-		return (0);
-}
+// void	eaten(t_data tdata)
+// {
+// 	if ()
+// }
